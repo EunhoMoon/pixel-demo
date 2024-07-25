@@ -1,38 +1,30 @@
-.App {
-  text-align: center;
+.pixel-art {
+  width: 160px; /* 픽셀 아트의 폭을 조정 */
+  height: 160px; /* 픽셀 아트의 높이를 조정 */
+  display: grid;
+  grid-template-columns: repeat(10, 16px); /* 픽셀 아트의 열을 조정 */
+  grid-template-rows: repeat(10, 16px); /* 픽셀 아트의 행을 조정 */
+  position: relative;
+  animation: moveAndResize 4s infinite ease-in-out; /* 속도를 느리게 조정 */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.pixel {
+  width: 16px; /* 한 픽셀의 크기 */
+  height: 16px; /* 한 픽셀의 크기 */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+.pixel.black { background-color: black; }
+.pixel.red { background-color: red; }
+.pixel.white { background-color: white; }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@keyframes moveAndResize {
+  0% { transform: translateX(0) scaleX(1) scaleY(1); }
+  12.5% { transform: translateX(25px) scaleX(1.2) scaleY(0.8); }
+  25% { transform: translateX(50px) scaleX(1) scaleY(1); }
+  37.5% { transform: translateX(75px) scaleX(1.2) scaleY(0.8); }
+  50% { transform: translateX(100px) scaleX(1) scaleY(1); }
+  62.5% { transform: translateX(75px) scaleX(1.2) scaleY(0.8); }
+  75% { transform: translateX(50px) scaleX(1) scaleY(1); }
+  87.5% { transform: translateX(25px) scaleX(1.2) scaleY(0.8); }
+  100% { transform: translateX(0) scaleX(1) scaleY(1); }
 }
